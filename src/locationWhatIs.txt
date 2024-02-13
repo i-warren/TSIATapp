@@ -1,0 +1,28 @@
+A cavernous warehouse filled with shipping containers extends into the darkness.%n
+The Science Lab was once a center of research on bioengineering for terraforming but it has fallen to ruin.%n
+Another huge space dominated by 50-foot tall terraforming towers, illuminated only by lights in the heights above.%n
+An indoor track circles a turf field a hundred yards across.%n
+Each floor’s ring contains a few dozen cryopods, enough to skeleton crew the Advent Dawn.%n
+A cluttered and ransacked series of once antiseptic white rooms.%n
+A small rectangular room with straight-backed metal chairs bolted to the floor and a stainless steel altar at the front on a raised dais.%n
+Hot and humid air condenses on every surface, and numerous industrial lights hang from catwalks that crisscross above rotten, putrefying biomass.%n
+The bridge has a trove of survey data the ship’s systems have automatically taken after each jump.%n
+The tiers of escape pod bays lie empty, their treasures fired into the void long ago.%n
+The engineering bay holds the main reactors which power [Ghostship’s] conventional drive units.%n
+The mainframe is the heart of the Advent Dawn’s network. It is tied to every workstation and terminal on the ship, but like the ship itself it is altered and corrupted.%n
+The room, obviously once white, has become dingy and stained, centered by a few chipped circular tables.%n
+A workshop with tall ceilings, good lighting, and was once stocked with all the resources needed to fabricate the machines, parts, and tools a new settlement needs.%n
+A cluster of rooms designed to accommodate the crew on dutyservice. Each room contains 4-6 bunks, storage, and lavatory.%n
+The Armory was mostly emptied in the first days after Advent Dawn’s initial jump, and bears the scars of unsuccessful attempts of later visitors to gain access.%n
+A large ship in its own right, capable of carrying entire sections of industrial equipment from the ship to the surface of a planet.%n
+Designed to house every lifeform needed for a new settlement.%n
+The Lounge is a strange neutral ground in the middle of a dangerous interdimensional vessel. Hank is one of the few survivors of an early exploration group and has survived through gumption and a decent talent for distillation of spirits.%n
+Water purification, atmo scrubbers, and powercell for emergency life support.%n
+The radiation shields in the skin of the ship all feed here. The energy from the cosmic rays is collected in tubes running throughout the hull. It is then collected here and converted to electricity that supplements the vessel’s power demands.%n
+The graviton generator is the core of the artificial gravity on the ship. %n
+Automated ship systems adapt to the docking ship’s port systems.%n
+The Paradimensional Drive is the corrupt heart of the ship.%n
+The waste management module was designed to be the reclamation hub for a new settlement, but now runs chaotically to cleanse the ship of the denizens remnants.%n
+A space designed to allow the crew to view the expanse of space.%n
+A set of interlinked transmitters and the engineering space below them.%n
+Vessels this complicated are usually supplemented with a complex AI to maintain the vessel. When needed the AI can split its consciousness into Android bodies housed in the core room.%n

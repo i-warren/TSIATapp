@@ -1,0 +1,28 @@
+Cargo Bay
+Science Lab
+Terraforming
+Recreation Area
+Cryochamber
+Medical Bay
+Chapel
+Greenhouse
+Bridge
+Escape Pods
+Engineering
+Mainframe
+Mess Hall
+Fabrication
+Living Quarters
+Armory
+Carryall
+Embryo Chamber
+Lounge
+Life Support
+Radiation Converter
+Artificial Gravity Generator
+Adaptive Docking Port
+Paradimensional Drive
+Waste Management
+Observation Deck
+Communications Array
+AI Core
