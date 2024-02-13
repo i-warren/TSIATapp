@@ -4,23 +4,23 @@ public class Location extends Section {
 
     private String readAloud;
     private String locationDetail;
-    private String[] locationTitleArray = new String[28];
-    private String[] locationWhatIsArray = new String[28];
-    private String[] locationReadArray = new String[28];
-    private String[] locationDetailArray = new String[28];
+    private String[] locationTitleArray;
+    private String[] locationWhatIsArray;
+    private String[] locationReadArray;
+    private String[] locationDetailArray;
     private int sectionNum;
 
 
     // Create Location from sectionNum
-    Location(int rollNum) throws IOException{
-        this.sectionNum = rollNum;
+    Location(int sectionNum) throws IOException{
+        this.sectionNum = sectionNum;
 
 
         //create d20 die
         Die locationDie = new Die(20);
 
         //roll result
-        int index = locationDie.rollDie() + sectionNum;
+        int index = locationDie.rollDie() + this.sectionNum - 1;
 
         //set Arrays
         locationTitleArray = readArray("src\\locationTitles.txt");
@@ -28,8 +28,14 @@ public class Location extends Section {
         locationReadArray = readArray("src\\locationRead.txt");
         locationDetailArray = readArray("src\\locationDetail.txt");
 
-        //get data from array
-        if (index < 29) {
+        //get data for Location
+        if (this.sectionNum == 0) {
+            this.setTitle(22);
+            this.setWhatItIs(22);
+            this.setReadAloud(22);
+            this.setDetail(22);
+
+        }else if (index < 29) {
             this.setTitle(index);
             this.setWhatItIs(index);
             this.setReadAloud(index);
@@ -44,6 +50,9 @@ public class Location extends Section {
 
     }
 
+    public String checkArray(int n){
+        return locationTitleArray[n];
+    }
 
     @Override
     public int getSectionNum() {

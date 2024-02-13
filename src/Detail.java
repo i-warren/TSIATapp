@@ -4,20 +4,20 @@ public class Detail extends Section {
 
     private String effect;
 
-    private String[] detailTitleArray = new String[27];
-    private String[] detailEffectArray = new String[27];
+    private String[] detailTitleArray;
+    private String[] detailEffectArray;
     private int sectionNum;
 
     // Create Detail from sectionNum
-    Detail(int rollNum) throws IOException {
-        this.sectionNum = rollNum;
+    Detail(int sectionNum) throws IOException {
+        this.sectionNum = sectionNum;
 
 
         //create d20 die
         Die locationDie = new Die(20);
 
         //roll result
-        int index = locationDie.rollDie() + sectionNum;
+        int index = locationDie.rollDie() + this.sectionNum - 1;
 
         //set Arrays
         detailTitleArray = readArray("src\\detailTitles.txt");
@@ -36,10 +36,7 @@ public class Detail extends Section {
     }
 
     // return title
-    @Override
-    public String getTitle() {
-        return title;
-    }
+
 
     //return effect
     public String getEffect() {

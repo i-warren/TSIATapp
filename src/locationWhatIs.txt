@@ -20,8 +20,8 @@ The Lounge is a strange neutral ground in the middle of a dangerous interdimensi
 Water purification, atmo scrubbers, and powercell for emergency life support.%n
 The radiation shields in the skin of the ship all feed here. The energy from the cosmic rays is collected in tubes running throughout the hull. It is then collected here and converted to electricity that supplements the vessel’s power demands.%n
 The graviton generator is the core of the artificial gravity on the ship. %n
-Automated ship systems adapt to the docking ship’s port systems.%n
-The Paradimensional Drive is the corrupt heart of the ship.%n
+Automated ship systems adapt to the docking ship’s port systems.
+The Paradimensional Drive is the corrupt heart of the ship.
 The waste management module was designed to be the reclamation hub for a new settlement, but now runs chaotically to cleanse the ship of the denizens remnants.%n
 A space designed to allow the crew to view the expanse of space.%n
 A set of interlinked transmitters and the engineering space below them.%n

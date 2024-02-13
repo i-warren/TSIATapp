@@ -3,7 +3,7 @@ import java.io.IOException;
 public class RandomEvent extends Section {
 
 
-    private String[] randomEventArray = new String[17];
+    private String[] randomEventArray;
 
 
     // Create Random Event object from sectionNum
@@ -14,7 +14,7 @@ public class RandomEvent extends Section {
         Die locationDie = new Die(20);
 
         //roll result
-        int index = locationDie.rollDie() + sectionNum;
+        int index = locationDie.rollDie() + this.sectionNum - 1;
 
         //set Arrays
         randomEventArray = readArray("src\\randomEventTitle.txt");
@@ -28,10 +28,6 @@ public class RandomEvent extends Section {
         }
     }
 
-    // return title
-    public String getTitle() {
-        return title;
-    }
 
     //set title
     public void setTitle(int index) {
