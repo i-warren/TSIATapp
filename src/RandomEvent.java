@@ -11,7 +11,7 @@ public class RandomEvent extends Section {
         this.sectionNum = sectionNum;
 
         //create d20 die
-        Die locationDie = new Die(20);
+        Die locationDie = new Die(18);
 
         //roll result
         int index = locationDie.rollDie() + this.sectionNum - 1;
