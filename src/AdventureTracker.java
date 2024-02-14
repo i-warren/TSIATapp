@@ -3,12 +3,17 @@ import java.io.IOException;
 public class AdventureTracker {
 
     private int sectionNum;
+    private int goBackInteger;
     private Location currentLocation;
     private Detail currentDetail;
     private RandomEvent currentRandomEvent;
 
-    AdventureTracker(){
+    AdventureTracker() throws IOException {
         sectionNum = 0;
+        goBackInteger = 0;
+        this.currentLocation =  new Location(0);
+        this.currentDetail = new Detail(0);
+        this.currentRandomEvent = new RandomEvent(0);
 
     }
 
@@ -25,8 +30,9 @@ public class AdventureTracker {
     }
 
     //move forward
-    public void moveForward() throws IOException {
+    public void pushForward() throws IOException {
         incrementSectionNum();
+        goBackInteger = 0;
         this.currentLocation = new Location(sectionNum);
         this.currentDetail = new Detail(sectionNum);
         this.currentRandomEvent = new RandomEvent(sectionNum);
@@ -35,11 +41,19 @@ public class AdventureTracker {
 
     //move back
     // TODO Create functionality for go back one vs more
-    public void moveBack() throws IOException {
+    public void goBack() throws IOException {
         decrementSectionNum();
-        currentLocation = new Location(sectionNum);
-        currentDetail = new Detail(sectionNum);
-        currentRandomEvent = new RandomEvent(sectionNum);
+        goBackInteger ++;
+        if (goBackInteger <= 1){
+            // todo get last Location from arraylist
+            currentDetail = new Detail(sectionNum);
+            currentRandomEvent = new RandomEvent(sectionNum);
+        } else {
+            currentLocation = new Location(sectionNum);
+            currentDetail = new Detail(sectionNum);
+            currentRandomEvent = new RandomEvent(sectionNum);
+        }
+
 
     }
 
@@ -67,4 +81,10 @@ public class AdventureTracker {
     public int getSectionNum() {
         return sectionNum;
     }
+
+    // return goBackInteger
+    public int getGoBackInteger(){
+        return goBackInteger;
+    }
+
 }

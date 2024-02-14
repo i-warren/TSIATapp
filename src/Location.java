@@ -91,7 +91,7 @@ public class Location extends Section {
 
     @Override // Override toString()
     public String toString() {
-        return ("Location: " + this.title + "\n" + this.whatItIs + "\n\n"
+        return ("Location: " + this.title + "\n" + this.whatItIs + "\n"
                 + "Read Aloud: " + this.readAloud +
                 "\nLocation Detail: " + this.locationDetail);
     }
