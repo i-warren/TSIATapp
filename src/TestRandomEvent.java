@@ -7,11 +7,11 @@ public class TestRandomEvent {
         RandomEvent testRandomEvent = new RandomEvent(0);
 
         // Display event info
-        System.out.printf("Random Event: " + testRandomEvent.getTitle() + "\n");
+        System.out.println(testRandomEvent + "\n");
 
         //set  and display randomEvent
         testRandomEvent.setTitle(5);
-        System.out.printf("Random Event: " + testRandomEvent.getTitle());
+        System.out.println(testRandomEvent);
 
 
     }

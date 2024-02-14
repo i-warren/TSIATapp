@@ -64,4 +64,9 @@ public class Detail extends Section {
         this.effect = s;
     }
 
+    @Override   // override toString()
+    public String toString() {
+        return ("Detail: " + this.title + "\n\n" + this.effect);
+    }
+
 }

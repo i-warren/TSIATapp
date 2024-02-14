@@ -11,21 +11,18 @@ public class RandomEvent extends Section {
         this.sectionNum = sectionNum;
 
         //create d20 die
-        Die locationDie = new Die(18);
+        Die locationDie = new Die(20);
 
         //roll result
-        int index = locationDie.rollDie() + this.sectionNum - 1;
+        int index = locationDie.rollDie() + - 1;
 
         //set Arrays
         randomEventArray = readArray("src\\randomEventTitle.txt");
 
-        //get data from arrays
+        //get data from arrays TODO loop for reroll?
         if (this.sectionNum == 0) {
             setTitle("");
-        } else if (index < 17) {
-            this.setTitle(index);
-        } else {
-            index = 16;
+        } else if (index < 20) {
             this.setTitle(index);
         }
     }
@@ -39,6 +36,11 @@ public class RandomEvent extends Section {
     // set title overloaded for String
     public void setTitle(String s) {
         title = s;
+    }
+
+    @Override   // override toString()
+    public String toString() {
+        return ("Random Event: " + this.title);
     }
 
 }

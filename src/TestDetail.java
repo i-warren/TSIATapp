@@ -7,13 +7,13 @@ public class TestDetail {
         Detail testDetail = new Detail(0);
 
         //test getters
-        System.out.printf("Detail: " + testDetail.getTitle() + "\n\n" + testDetail.getEffect());
+        System.out.println(testDetail);
 
         // Create detail object at section num 5
         Detail testDetail2 = new Detail(5);
 
         //test getters
-        System.out.printf("Detail: " + testDetail2.getTitle() + "\n\n" + testDetail2.getEffect());
+        System.out.println(testDetail2);
 
     }
 

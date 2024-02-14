@@ -89,5 +89,11 @@ public class Location extends Section {
         locationDetail = locationDetailArray[index];
     }
 
+    @Override // Override toString()
+    public String toString() {
+        return ("Location: " + this.title + "\n" + this.whatItIs + "\n\n"
+                + "Read Aloud: " + this.readAloud +
+                "\nLocation Detail: " + this.locationDetail);
+    }
 
 }
