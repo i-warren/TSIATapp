@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class AdventureTracker {
 
@@ -7,13 +8,17 @@ public class AdventureTracker {
     private Location currentLocation;
     private Detail currentDetail;
     private RandomEvent currentRandomEvent;
+    private ArrayList<Location> locationArrayList = new ArrayList<Location>();
+    private ArrayList<Detail> detailArrayList = new ArrayList<Detail>();
 
     AdventureTracker() throws IOException {
         sectionNum = 0;
         goBackInteger = 0;
-        this.currentLocation =  new Location(0);
-        this.currentDetail = new Detail(0);
-        this.currentRandomEvent = new RandomEvent(0);
+        currentLocation =  new Location(0);
+        currentDetail = new Detail(0);
+        currentRandomEvent = new RandomEvent(0);
+        locationArrayList.add(currentLocation);
+        detailArrayList.add(currentDetail);
 
     }
 
@@ -32,10 +37,14 @@ public class AdventureTracker {
     //move forward
     public void pushForward() throws IOException {
         incrementSectionNum();
-        goBackInteger = 0;
-        this.currentLocation = new Location(sectionNum);
-        this.currentDetail = new Detail(sectionNum);
-        this.currentRandomEvent = new RandomEvent(sectionNum);
+        goBackInteger = 0;  // reset goBack integer
+
+        // create new random section
+        currentLocation = new Location(sectionNum);
+        locationArrayList.add(this.currentLocation);    // add location to list
+        currentDetail = new Detail(sectionNum);
+        detailArrayList.add(currentDetail);             // add detail to list
+        currentRandomEvent = new RandomEvent(sectionNum);
 
     }
 
@@ -44,11 +53,11 @@ public class AdventureTracker {
     public void goBack() throws IOException {
         decrementSectionNum();
         goBackInteger ++;
-        if (goBackInteger <= 1){
-            // todo get last Location from arraylist
-            currentDetail = new Detail(sectionNum);
+        if (goBackInteger <= 1){    // get last Location and Detail from lists
+            currentLocation = locationArrayList.get(locationArrayList.size() - 2);
+            currentDetail = detailArrayList.get(detailArrayList.size() - 2);
             currentRandomEvent = new RandomEvent(sectionNum);
-        } else {
+        } else {        // Create new random section
             currentLocation = new Location(sectionNum);
             currentDetail = new Detail(sectionNum);
             currentRandomEvent = new RandomEvent(sectionNum);
@@ -85,6 +94,11 @@ public class AdventureTracker {
     // return goBackInteger
     public int getGoBackInteger(){
         return goBackInteger;
+    }
+
+    // return locationArrayList
+    public ArrayList<Location> getLocationArrayList() {
+        return locationArrayList;
     }
 
 }

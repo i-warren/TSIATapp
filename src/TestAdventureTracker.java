@@ -15,18 +15,27 @@ public class TestAdventureTracker {
 
         // Push forward three times sectionNumber = 3  goBackInteger = 0
         testTracker.pushForward();
+        System.out.println("--------------------------Push Forward--------------");
         testTracker.pushForward();
-        testTracker.pushForward();
-
-        //Display Section Number, goBackInteger, Location, Detail, and Random Event
+        System.out.println("--------------------------Push Forward--------------");
         System.out.println("\nSection Number:" + testTracker.getSectionNum());
         System.out.println("Go back integer: " + testTracker.getGoBackInteger());
+        System.out.println(testTracker.getLocation());
+        testTracker.pushForward();
+        System.out.println("--------------------------Push Forward--------------");
+
+
+//        System.out.println(testTracker.getLocationArrayList());
+
+        //Display Section Number, goBackInteger, Location, Detail, and Random Event
+
         System.out.println(testTracker.getLocation());
         System.out.println("\n" + testTracker.getDetail());
         System.out.println("\n" + testTracker.getRandomEvent());
 
         // Go Back Once sectionNumber = 2  goBackInteger = 1
         testTracker.goBack();
+        System.out.println("--------------------------Go Back--------------------");
 
         //Display Section Number, goBackInteger, Location, Detail, and Random Event
         System.out.println("\nSection Number:" + testTracker.getSectionNum());
@@ -37,7 +46,7 @@ public class TestAdventureTracker {
 
         // Go Back Again sectionNumber = 1  goBackInteger = 2
         testTracker.goBack();
-
+        System.out.println("--------------------------Go Back--------------------");
         //Display Section Number, goBackInteger, Location, Detail, and Random Event
         System.out.println("\nSection Number:" + testTracker.getSectionNum());
         System.out.println("Go back integer: " + testTracker.getGoBackInteger());
@@ -47,6 +56,7 @@ public class TestAdventureTracker {
 
         // Push Forward once sectionNumber = 2  goBackInteger = 0
         testTracker.pushForward();
+        System.out.println("--------------------------Push Forward--------------------");
 
         //Display Section Number, goBackInteger
         System.out.println("\nSection Number:" + testTracker.getSectionNum());
