@@ -24,7 +24,10 @@ public class Detail extends Section {
         detailEffectArray = readArray("src\\detailEffect.txt");
 
         //get data from arrays
-        if (index < 28) {
+        if (this.sectionNum == 0) {
+            this.setTitle("");
+            this.setEffect("");
+        }else if (index < 28) {
             this.setTitle(index);
             this.setEffect(index);
         } else {
@@ -35,8 +38,6 @@ public class Detail extends Section {
 
     }
 
-    // return title
-
 
     //return effect
     public String getEffect() {
@@ -45,12 +46,22 @@ public class Detail extends Section {
 
     // set title
     public void setTitle(int index) {
-        title = detailTitleArray[index];
+        this.title = detailTitleArray[index];
+    }
+
+    // set title overload for String
+    public void setTitle(String s){
+        this.title = s;
     }
 
     //set effect
     public void setEffect(int index) {
-        effect = detailEffectArray[index];
+        this.effect = detailEffectArray[index];
+    }
+
+    // set effect overload for String
+    public void setEffect(String s){
+        this.effect = s;
     }
 
 }
