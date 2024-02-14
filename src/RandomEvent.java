@@ -20,7 +20,9 @@ public class RandomEvent extends Section {
         randomEventArray = readArray("src\\randomEventTitle.txt");
 
         //get data from arrays
-        if (index < 17) {
+        if (this.sectionNum == 0) {
+            setTitle("");
+        } else if (index < 17) {
             this.setTitle(index);
         } else {
             index = 16;
@@ -32,6 +34,11 @@ public class RandomEvent extends Section {
     //set title
     public void setTitle(int index) {
         title = randomEventArray[index];
+    }
+
+    // set title overloaded for String
+    public void setTitle(String s) {
+        title = s;
     }
 
 }

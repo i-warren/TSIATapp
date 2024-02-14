@@ -4,7 +4,7 @@ public class TestRandomEvent {
 
     public static void main(String[] args) throws IOException{
         //create RandomEvent object
-        RandomEvent testRandomEvent = new RandomEvent(1);
+        RandomEvent testRandomEvent = new RandomEvent(0);
 
         // Display event info
         System.out.printf("Random Event: " + testRandomEvent.getTitle() + "\n");
