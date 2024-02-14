@@ -14,12 +14,12 @@ public class RandomEvent extends Section {
         Die locationDie = new Die(20);
 
         //roll result
-        int index = locationDie.rollDie() + - 1;
+        int index = locationDie.rollDie() - 1;
 
         //set Arrays
         randomEventArray = readArray("src\\randomEventTitle.txt");
 
-        //get data from arrays TODO loop for reroll?
+        //get data from arrays
         if (this.sectionNum == 0) {
             setTitle("");
         } else if (index < 20) {
