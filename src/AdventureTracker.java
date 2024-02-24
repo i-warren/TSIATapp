@@ -48,8 +48,7 @@ public class AdventureTracker {
 
     }
 
-    //move back
-    // TODO Create functionality for go back one vs more
+    // Go back functionality
     public void goBack() throws IOException {
         decrementSectionNum();
         goBackInteger ++;
