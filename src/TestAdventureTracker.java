@@ -62,6 +62,12 @@ public class TestAdventureTracker {
         System.out.println("\nSection Number:" + testTracker.getSectionNum());
         System.out.println("Go back integer: " + testTracker.getGoBackInteger());
 
+        for (int i = 1; i < 30; i++) {
+            testTracker.pushForward();
+            System.out.println("Index: " + testTracker.getLocation().getIndex());
+            System.out.println(testTracker.getLocation());
+        }
+
 
 
     }

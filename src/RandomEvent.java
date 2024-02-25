@@ -40,7 +40,7 @@ public class RandomEvent extends Section {
 
     @Override   // override toString()
     public String toString() {
-        return ("Random Event: " + this.title);
+        return (this.title);
     }
 
 }

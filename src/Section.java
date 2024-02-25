@@ -33,6 +33,10 @@ public abstract class Section {
         return sectionNum;
     }
 
+    public void incrementSectionNum() {
+        sectionNum++;
+    }
+
     // Read to Array
     public String[] readArray(String filename)
             throws IOException {

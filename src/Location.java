@@ -10,17 +10,29 @@ public class Location extends Section {
     private String[] locationDetailArray;
     private int sectionNum;
 
+    private int index;
+
 
     // Create Location from sectionNum
-    Location(int sectionNum) throws IOException{
-        this.sectionNum = sectionNum;
+    Location(int sectionNumber) throws IOException{
+        sectionNum = sectionNumber;
 
 
         //create d20 die
         Die locationDie = new Die(20);
 
+
         //roll result
-        int index = locationDie.rollDie() + this.sectionNum - 1;
+        if ((sectionNum - 1) > 27) { // if sectionNum is greater than array use last index of array
+            sectionNum = 27;
+            index = 27;
+        } else {
+            do {
+                index = locationDie.rollDie() + sectionNum - 1;
+            }
+            while (index > 27);
+        }
+
 
         //set Arrays
         locationTitleArray = readArray("src\\locationTitles.txt");
@@ -29,19 +41,13 @@ public class Location extends Section {
         locationDetailArray = readArray("src\\locationDetail.txt");
 
         //get data for Location
-        if (this.sectionNum == 0) {
+        if (sectionNum == 0) {
             this.setTitle(22);
             this.setWhatItIs(22);
             this.setReadAloud(22);
             this.setDetail(22);
 
-        }else if (index < 29) {
-            this.setTitle(index);
-            this.setWhatItIs(index);
-            this.setReadAloud(index);
-            this.setDetail(index);
-        } else {
-            index = 28;
+        }else if (index < 28) {
             this.setTitle(index);
             this.setWhatItIs(index);
             this.setReadAloud(index);
@@ -57,6 +63,10 @@ public class Location extends Section {
     @Override
     public int getSectionNum() {
         return sectionNum;
+    }
+
+    public void incrementSectionNumber() {
+        sectionNum++;
     }
 
     //Return readAloud
@@ -89,11 +99,15 @@ public class Location extends Section {
         locationDetail = locationDetailArray[index];
     }
 
+    public int getIndex() {
+        return index;
+    }
+
     @Override // Override toString()
     public String toString() {
-        return ("Location: " + this.title + "\n" + this.whatItIs + "\n"
-                + "Read Aloud: " + this.readAloud +
-                "\nLocation Detail: " + this.locationDetail);
+        return (this.title + "\n" + this.whatItIs + "\n\n"
+                + "Read Aloud:\n" + this.readAloud +
+                "\n\nLocation Detail:\n" + this.locationDetail);
     }
 
 }

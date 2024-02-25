@@ -7,6 +7,7 @@ public class Detail extends Section {
     private String[] detailTitleArray;
     private String[] detailEffectArray;
     private int sectionNum;
+    private int index;
 
     // Create Detail from sectionNum
     Detail(int sectionNum) throws IOException {
@@ -17,7 +18,15 @@ public class Detail extends Section {
         Die locationDie = new Die(20);
 
         //roll result
-        int index = locationDie.rollDie() + this.sectionNum - 1;
+        if ((sectionNum - 1) > 27) { // if sectionNum is greater than array use last index of array
+            sectionNum = 27;
+            index = 27;
+        } else {
+            do {
+                index = locationDie.rollDie() + sectionNum - 1;
+            }
+            while (index > 27);
+        }
 
         //set Arrays
         detailTitleArray = readArray("src\\detailTitles.txt");
@@ -28,10 +37,6 @@ public class Detail extends Section {
             this.setTitle("");
             this.setEffect("");
         }else if (index < 28) {
-            this.setTitle(index);
-            this.setEffect(index);
-        } else {
-            index = 27;
             this.setTitle(index);
             this.setEffect(index);
         }
@@ -66,7 +71,7 @@ public class Detail extends Section {
 
     @Override   // override toString()
     public String toString() {
-        return ("Detail: " + this.title + "\n" + this.effect);
+        return (this.title + "\n" + this.effect);
     }
 
 }

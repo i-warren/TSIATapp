@@ -36,7 +36,10 @@ public class AdventureTracker {
 
     //move forward
     public void pushForward() throws IOException {
-        incrementSectionNum();
+        if (sectionNum < 27) {
+            incrementSectionNum();
+        }
+
         goBackInteger = 0;  // reset goBack integer
 
         // create new random section
@@ -50,16 +53,18 @@ public class AdventureTracker {
 
     // Go back functionality
     public void goBack() throws IOException {
-        decrementSectionNum();
-        goBackInteger ++;
-        if (goBackInteger <= 1){    // get last Location and Detail from lists
-            currentLocation = locationArrayList.get(locationArrayList.size() - 2);
-            currentDetail = detailArrayList.get(detailArrayList.size() - 2);
-            currentRandomEvent = new RandomEvent(sectionNum);
-        } else {        // Create new random section
-            currentLocation = new Location(sectionNum);
-            currentDetail = new Detail(sectionNum);
-            currentRandomEvent = new RandomEvent(sectionNum);
+        if (sectionNum > 0){
+            decrementSectionNum();
+            goBackInteger ++;
+            if (goBackInteger <= 1){    // get last Location and Detail from lists
+                currentLocation = locationArrayList.get(locationArrayList.size() - 2);
+                currentDetail = detailArrayList.get(detailArrayList.size() - 2);
+                currentRandomEvent = new RandomEvent(sectionNum);
+            } else {        // Create new random section
+                currentLocation = new Location(sectionNum);
+                currentDetail = new Detail(sectionNum);
+                currentRandomEvent = new RandomEvent(sectionNum);
+            }
         }
 
 

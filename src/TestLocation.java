@@ -16,9 +16,10 @@ public class TestLocation {
         //test getters
         System.out.println("\n\n" + testLocation2);
 
+
         // test array TESTING ONLY
-        System.out.println("\nLocation possibilites at Section number " + testLocation2.getSectionNum());
-        for (int i = 1; i < 21; i++) {
+        System.out.println("\nLocation possibilities at Section number " + testLocation2.getSectionNum());
+        for (int i = 1; i < 28; i++) {
 //            System.out.println("i = " + i + "Index val: " + );
             System.out.println(testLocation2.checkArray(i + testLocation2.getSectionNum() - 1));
 
