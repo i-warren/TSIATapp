@@ -1,0 +1,39 @@
+#mainLabels{
+    -fx-text-fill: rgb(244, 242, 241);
+    -fx-font-size:20;
+}
+
+#redLabels {
+    -fx-text-fill: rgb(255, 0, 51);
+}
+
+#textOutput{
+    -fx-text-fill: rgb(0, 255, 204);
+}
+
+
+
+#greenButton{
+    -fx-text-fill: rgb(0, 255, 204);
+}
+
+.root{
+    -fx-background-color: rgb(18, 16, 15);
+}
+
+.button{
+    -fx-background-color: rgb(78, 76, 75);
+    -fx-text-fill: rgb(244, 242, 241);
+    -fx-font-size: 16;
+    -fx-font-weight: 800;
+}
+
+.scroll-bar:horizontal, .scroll-bar:vertical{
+    -fx-background-color:transparent;
+}
+
+.scroll-pane {
+    -fx-background: rgb(38, 36, 35);
+     -fx-padding: 5, 15, 5, 5;
+}
+

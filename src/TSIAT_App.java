@@ -9,6 +9,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -47,13 +48,25 @@ public class TSIAT_App extends Application {
         bannerView.setFitHeight(200);
         bannerPane.getChildren().add(bannerView);
 
+        // Set output text color
+        txtLocation.setFill(Color.rgb(0, 255, 204));
+        txtDetail.setFill(Color.rgb(0, 255, 204));
+        txtRandomEvent.setFill(Color.rgb(0, 255, 204));
+
+        //Set ids for css
+        lblLocation.setId("mainLabels");
+        lblDetail.setId("mainLabels");
+        lblRandomEvent.setId("mainLabels");
+        lblSectionNum.setId("redLabels");
+        btnStartReset.setId("greenButton");
+
 
         // add left Location
         VBox locationVbox = new VBox();
         locationVbox.setPadding(new Insets(5, 5, 5, 5));    // set Padding
         ScrollPane scrollLocation = new ScrollPane(txtLocation);
         scrollLocation.setPrefSize(400, 400);
-        txtLocation.wrappingWidthProperty().bind(scrollLocation.widthProperty());
+        txtLocation.setWrappingWidth(390);
         locationVbox.getChildren().addAll(lblLocation, scrollLocation);
         pane.setLeft(locationVbox);
 
@@ -62,11 +75,10 @@ public class TSIAT_App extends Application {
         detailsVbox.setPadding(new Insets(5, 5, 5, 5));    // set Padding
         ScrollPane scrollDetail = new ScrollPane(txtDetail);
         scrollDetail.setPrefSize(400, 250);
-        txtDetail.wrappingWidthProperty().bind(scrollDetail.widthProperty());
-
+        txtDetail.setWrappingWidth(390);
         ScrollPane scrollRandomEvent = new ScrollPane(txtRandomEvent);
         scrollRandomEvent.setPrefSize(400, 132);
-        txtRandomEvent.wrappingWidthProperty().bind(scrollRandomEvent.widthProperty());
+        txtRandomEvent.setWrappingWidth(390);
 
         detailsVbox.getChildren().addAll(lblDetail, scrollDetail, lblRandomEvent, scrollRandomEvent, lblSectionNum);
         pane.setRight(detailsVbox);
@@ -112,15 +124,18 @@ public class TSIAT_App extends Application {
         btnStartReset.setPrefWidth(150);
 
         // add buttons to navigation pane and set to Bottom of pane
-        navigation.getChildren().addAll(btnPushForward, btnGoBack, btnStayPut, btnStartReset);
+        navigation.getChildren().addAll(btnStartReset, btnPushForward, btnGoBack, btnStayPut);
         pane.setTop(bannerPane);
         pane.setBottom(navigation);
 
 
         // create a scene and set it in the stage
         Scene scene = new Scene(pane, 820, 700);
+        String css = this.getClass().getResource("application.css").toExternalForm();
+        scene.getStylesheets().add(css);
         primaryStage.setTitle("This Ship is a Tomb Companion");  // set Title
         primaryStage.setScene(scene);           // Place scene in stage
+        primaryStage.setResizable(false);       // make scene not resizable
         primaryStage.show();                    // Display stage
     }
 
